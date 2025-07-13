@@ -58,7 +58,7 @@ const navigate = useNavigate()
                     <p>${getTotalCartAmount()===0?0: getTotalCartAmount()+10}</p>
               </div>
             </div>
-              <button onClick={()=>navigate("/order")}>PROCEED TO CHECKOUT</button>
+              <button onClick={()=>navigate("/order")}> <span onClick={()=>scrollTo(0,0)}>PROCEED TO CHECKOUT</span> </button>
 
           </div>
 

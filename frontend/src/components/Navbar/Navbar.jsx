@@ -15,9 +15,12 @@ const navigate = useNavigate()
     }
   return (
     <div className='navbar'>
-     <Link to={'/'}><img src={assets.logo} alt="" className='logo' /></Link> 
+     <Link to={'/'}> <h1 className='logo'>MOM.</h1>
+     </Link> 
       <ul className="navbar-menu">
-        <Link to={'/'} onClick={()=>setMenu("home")} className={menu === "home"? "active":""}>Home</Link>
+        <Link to={'/'} onClick={()=>setMenu("home")} className={menu === "home"? "active":""}>
+        <span onClick={()=>scrollTo(0,0)}>Home</span>
+        </Link>
         <a href='#explore-menu' onClick={()=>setMenu("menu")} className={menu === "menu"? 'active':''}>Menu</a>
         <a href='#app-download' onClick={()=>setMenu("mobile-app")} className={menu === "mobile-app"? 'active':''}>Mobile-app</a>
         <a href='#footer' onClick={()=>setMenu("contact")} className={menu === "contact"? "active":''}>Contact us</a>
@@ -26,10 +29,11 @@ const navigate = useNavigate()
       <div className="navbar-right">
         <img src={assets.search_icon} alt="" />
         <div className="navbar-search-icon">
-           <Link to={'/cart'}>  <img src={assets.basket_icon} alt="" /></Link>
+           <Link onClick={()=>scrollTo(0,0)} to={'/cart'}>  <img src={assets.basket_icon} alt="" /></Link>
             <div className={getTotalCartAmount()===0?"":"dot"}></div>
         </div>
-        {!token?        <button onClick={()=>setShowLogin(true)}>Sign In</button>:
+        {!token?
+        <div onClick={()=>scrollTo(0,0)}><button onClick={()=>setShowLogin(true)}>Sign In</button></div> :
         <div className='navar-profile'>
           <img src={assets.profile_icon} alt="" />
           <ul className='profile-dropdown'>
